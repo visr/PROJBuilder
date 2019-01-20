@@ -1,5 +1,7 @@
 using BinaryBuilder
 
+src_version = v"5.2.0"
+
 # Collection of sources required to build PROJ
 sources = [
     "https://github.com/OSGeo/proj.4/releases/download/5.2.0/proj-5.2.0.tar.gz" =>
@@ -17,7 +19,7 @@ cd $WORKSPACE/srcdir
 mv proj-datumgrid-1.8/* proj-5.2.0/nad/
 cd proj-5.2.0/
 ./configure --prefix=$prefix --host=$target
-make -j4
+make
 make install
 """
 
